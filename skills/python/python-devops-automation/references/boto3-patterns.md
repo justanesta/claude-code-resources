@@ -1,0 +1,3 @@
+# Boto3 Patterns
+
+Content about AWS automation...

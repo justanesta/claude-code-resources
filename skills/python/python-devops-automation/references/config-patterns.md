@@ -1,0 +1,3 @@
+# Configuration Patterns
+
+Content about config management...

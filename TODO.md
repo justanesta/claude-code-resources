@@ -1,0 +1,6 @@
+- [ ] Create rest of the SQL: Data Engineering Project skills.
+- [ ] Create only fundamental `data_engineering` and `web_development` skills.
+- [ ] Update `README.md` with additional skill combinations by project type
+- [ ] Create first major subagents: `codebase-analyzer`, `documentation-updater`, `tests-refresher`, etc. Ask Claude for other common subagents for data science/data engineering workflows.
+- [ ] Figure out what `bin/init-claude-project.sh` does
+- [ ] Either modify `bin/init-claude-project.sh` or add different executable start up script that, based on project type, will automatically add relevant `CLAUDE.md`, claude skill, and claude subagent files to the project repo/directory head.
