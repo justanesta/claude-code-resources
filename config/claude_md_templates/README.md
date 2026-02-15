@@ -41,7 +41,7 @@ The frontmatter is stripped when the template is copied to `CLAUDE.md` — users
 
 ### Python
 
-**python-django-web** - Django web applications
+**python-django-app** - Django web applications
 - Django-specific patterns, DRF for APIs, pytest-django
 - PostgreSQL production, SQLite dev
 
@@ -73,7 +73,7 @@ The frontmatter is stripped when the template is copied to `CLAUDE.md` — users
 
 ### Web & Other
 
-**typescript-react** - React + TypeScript apps
+**typescript-react-app** - React + TypeScript apps
 - Vite, TanStack Query, Zod validation, Tailwind
 - Component testing with Vitest
 

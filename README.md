@@ -5,10 +5,10 @@ Personal collection of Claude Code configurations, templates, agents, and skills
 ## Contents
 
 - **config/global/** - Global `CLAUDE.md` configuration loaded in every Claude Code session
-- **config/claude_md_templates/** - Project-specific `CLAUDE.md` templates for different project types
+- **[config/claude_md_templates/](claude_md_template/README.md)** - Project-specific `CLAUDE.md` templates for different project types
 - **[subagents/](subagents/README.md)** - Custom Claude subagents for code analysis, testing, docs, SQL review, and more
-- **skills/** - Custom Claude skills organized by language/domain
-- **bin/** - Utility scripts for project initialization
+- **[skills/](skills/README.md)** - Custom Claude skills organized by language/domain
+- **bin/** - Utility script for project initialization
 
 ## Quick Start
 
