@@ -1,3 +1,17 @@
+---
+name: typescript-react-app
+description: React + TypeScript single-page application
+skills:
+  - webdev-javascript-fundamentals
+  - webdev-typescript-patterns
+  - webdev-react-patterns
+subagents:
+  - codebase-analyzer
+  - tests-refresher
+  - component-scaffolder
+  - api-spec-generator
+---
+
 # TypeScript React Application
 
 ## Project Type

@@ -1,3 +1,18 @@
+---
+name: r-package
+description: R package development for distributing reusable functions
+skills:
+  - writing-tidyverse-r
+  - developing-packages-r
+  - metaprogramming-rlang
+  - designing-oop-r
+subagents:
+  - codebase-analyzer
+  - tests-refresher
+  - documentation-updater
+  - refactor-planner
+---
+
 # R Package Development
 
 ## Project Type

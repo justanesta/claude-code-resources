@@ -1,3 +1,18 @@
+---
+name: python-django-app
+description: Django web application for production-ready web services
+skills:
+  - modern-python-patterns
+  - python-api-development
+  - python-testing
+  - python-error-handling
+subagents:
+  - codebase-analyzer
+  - tests-refresher
+  - api-spec-generator
+  - documentation-updater
+---
+
 # Django Web Application
 
 ## Project Type

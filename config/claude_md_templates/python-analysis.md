@@ -1,3 +1,17 @@
+---
+name: python-analysis
+description: Python data analysis for exploratory analysis, reporting, or blog posts
+skills:
+  - modern-python-patterns
+  - python-data-wrangling
+  - python-testing
+  - python-performance
+subagents:
+  - codebase-analyzer
+  - tests-refresher
+  - documentation-updater
+---
+
 # Python Data Analysis Project
 
 ## Project Type

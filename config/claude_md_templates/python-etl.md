@@ -1,3 +1,18 @@
+---
+name: python-etl
+description: Python ETL pipeline for data integration, cleaning, and warehouse loading
+skills:
+  - modern-python-patterns
+  - python-data-pipelines
+  - python-data-wrangling
+  - python-testing
+subagents:
+  - codebase-analyzer
+  - tests-refresher
+  - pipeline-debugger
+  - sql-reviewer
+---
+
 # Python ETL Pipeline
 
 ## Project Type

@@ -5,9 +5,9 @@ Personal collection of Claude Code configurations, templates, agents, and skills
 ## Contents
 
 - **config/global/** - Global `CLAUDE.md` configuration loaded in every Claude Code session
-- **config/templates/** - Project-specific `CLAUDE.md` templates for different project types
-- **agents/** - Custom Claude subagents (coming soon)
-- **skills/** - Custom Claude skills (coming soon)
+- **config/claude_md_templates/** - Project-specific `CLAUDE.md` templates for different project types
+- **[subagents/](subagents/README.md)** - Custom Claude subagents for code analysis, testing, docs, SQL review, and more
+- **skills/** - Custom Claude skills organized by language/domain
 - **bin/** - Utility scripts for project initialization
 
 ## Quick Start
@@ -33,8 +33,16 @@ Personal collection of Claude Code configurations, templates, agents, and skills
 
 Navigate to your project directory and run:
 ```bash
-init-claude-project 
+init-claude-project                        # interactive — pick type, skills, subagents
+init-claude-project python-etl             # skip the type menu
+init-claude-project python-etl --defaults  # non-interactive, install recommended set
 ```
+
+The installer will:
+1. Let you select a project type (or pass it as an argument)
+2. Show a checkbox menu of all available skills, with template recommendations pre-selected
+3. Show a checkbox menu of all available subagents, with template recommendations pre-selected
+4. Confirm and install `CLAUDE.md`, `CLAUDE.local.md`, `.claude/skills/`, and `.claude/subagents/`
 
 ## Recommended Skill Combinations by Project Type
 
@@ -134,9 +142,64 @@ init-claude-project
 - `sql-query-optimization` (performance tuning)
 - `sql-advanced-features` (stored procedures, triggers)
 
+### Data Engineering Projects
+
+**Batch Pipeline**
+- `data-eng-data-quality` (validation frameworks)
+- `data-eng-testing-patterns` (pipeline testing)
+- `python-data-pipelines` (Prefect/Airflow)
+- `sql-transformations` (SQL transforms)
+
+**Data Warehouse**
+- `data-eng-warehouse-patterns` (Snowflake/BigQuery/Redshift)
+- `sql-data-modeling` (star schema, SCDs)
+- `sql-analytics-patterns` (complex queries)
+- `data-eng-data-quality` (quality gates)
+
+**Real-Time System**
+- `data-eng-streaming-patterns` (Kafka, CDC)
+- `data-eng-data-quality` (stream validation)
+- `data-eng-cloud-infrastructure` (cloud services)
+
+### Web Development Projects
+
+**React Frontend**
+- `webdev-javascript-fundamentals` (ES2024+ patterns)
+- `webdev-typescript-patterns` (type safety)
+- `webdev-react-patterns` (hooks, state, testing)
+
+**Full-Stack Application**
+- `webdev-react-patterns` (frontend)
+- `python-api-development` (backend API)
+- `webdev-api-design` (REST conventions)
+- Optional: `webdev-typescript-patterns` (type safety)
+
+**Static Site / Landing Page**
+- `webdev-html-css-patterns` (semantic HTML, CSS Grid/Flexbox)
+- `webdev-javascript-fundamentals` (interactivity)
+
+### DevOps Projects
+
+**Containerized Application**
+- `devops-docker-patterns` (Dockerfile, Compose)
+- `devops-cicd-patterns` (CI/CD pipelines)
+- `devops-monitoring-observability` (logging, metrics)
+
+**Cloud Infrastructure**
+- `devops-terraform-patterns` (IaC)
+- `devops-docker-patterns` (containerization)
+- `devops-cicd-patterns` (deployment automation)
+
+### Git Workflows
+
+**Team Collaboration**
+- `git-workflow-patterns` (branching, PRs, conventions)
+- Optional: `git-advanced-operations` (rebase, recovery)
+
 ### General Guidelines
 
 - **Start with 3-4 skills**: Balance utility with context window efficiency
 - **Core + Domain**: Always include foundational skill + domain-specific skills
 - **Testing is universal**: Include testing skills for production code
 - **Add specialized skills as needed**: Performance, error handling, etc.
+- **Cross-domain combos**: Combine SQL + Python + Data Engineering for end-to-end pipelines

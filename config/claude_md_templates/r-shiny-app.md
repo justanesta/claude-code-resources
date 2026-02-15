@@ -1,3 +1,15 @@
+---
+name: r-shiny-app
+description: R Shiny interactive web application or dashboard
+skills:
+  - writing-tidyverse-r
+  - metaprogramming-rlang
+subagents:
+  - codebase-analyzer
+  - tests-refresher
+  - documentation-updater
+---
+
 # R Shiny Application
 
 ## Project Type

@@ -6,10 +6,36 @@ Project-specific `CLAUDE.md` templates for different development workflows.
 
 From your project directory, run:
 ```bash
-init-claude-project <template-name>
+init-claude-project              # interactive — select type, skills, subagents
+init-claude-project python-etl   # skip the type menu
+init-claude-project python-etl --defaults  # non-interactive, use recommended set
 ```
 
-This creates `CLAUDE.md` and `CLAUDE.local.md` in your current directory.
+This creates `CLAUDE.md`, `CLAUDE.local.md`, and copies selected skills/subagents into `.claude/`.
+
+## Template Frontmatter
+
+Each template begins with YAML frontmatter that the installer reads and strips:
+
+```yaml
+---
+name: template-name
+description: One-line description shown in the selection menu
+skills:
+  - skill-directory-name
+  - another-skill
+subagents:
+  - subagent-name
+  - another-subagent
+---
+```
+
+- **name**: Template identifier (matches the filename without `.md`)
+- **description**: Shown next to the template name during interactive selection
+- **skills**: Pre-selected in the skills checkbox menu (user can toggle on/off)
+- **subagents**: Pre-selected in the subagents checkbox menu (user can toggle on/off)
+
+The frontmatter is stripped when the template is copied to `CLAUDE.md` — users never see it.
 
 ## Available Templates
 
@@ -99,8 +125,9 @@ Templates are intentionally lean (150-300 words) to avoid bloating context windo
 ## Creating New Templates
 
 1. Copy an existing template as a starting point
-2. Keep structure consistent: Project Type → Standards → Testing → Documentation
-3. Aim for 100-200 words
-4. Focus on project-specific essentials
-5. Save as `<descriptive-name>.md` in this directory
-6. Template name becomes the command: `init-claude-project <descriptive-name>`
+2. Add YAML frontmatter with `name`, `description`, `skills`, and `subagents`
+3. Keep structure consistent: Project Type → Standards → Testing → Documentation
+4. Aim for 100-200 words
+5. Focus on project-specific essentials
+6. Save as `<descriptive-name>.md` in this directory
+7. The installer auto-discovers templates — no registration needed

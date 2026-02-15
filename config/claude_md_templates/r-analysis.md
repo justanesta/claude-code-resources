@@ -1,3 +1,16 @@
+---
+name: r-analysis
+description: R data analysis for exploratory analysis, statistical modeling, or reporting
+skills:
+  - writing-tidyverse-r
+  - metaprogramming-rlang
+  - optimizing-r
+subagents:
+  - codebase-analyzer
+  - tests-refresher
+  - documentation-updater
+---
+
 # R Data Analysis Project
 
 ## Project Type

@@ -1,3 +1,14 @@
+---
+name: r-dataviz
+description: R data visualization for publication-quality graphics and dashboards
+skills:
+  - writing-tidyverse-r
+  - metaprogramming-rlang
+subagents:
+  - codebase-analyzer
+  - documentation-updater
+---
+
 # R Data Visualization Project
 
 ## Project Type

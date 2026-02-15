@@ -1,3 +1,14 @@
+---
+name: static-site
+description: Static website or blog with static site generator
+skills:
+  - webdev-html-css-patterns
+  - webdev-javascript-fundamentals
+subagents:
+  - codebase-analyzer
+  - documentation-updater
+---
+
 # Static Site / Blog
 
 ## Project Type
