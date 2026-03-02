@@ -18,13 +18,13 @@ SUBAGENTS_DIR="$REPO_ROOT/subagents"
 # ---------------------------------------------------------------------------
 # Colors / formatting
 # ---------------------------------------------------------------------------
-BOLD='\033[1m'
-DIM='\033[2m'
-GREEN='\033[0;32m'
-YELLOW='\033[0;33m'
-CYAN='\033[0;36m'
-RED='\033[0;31m'
-RESET='\033[0m'
+BOLD=$'\033[1m'
+DIM=$'\033[2m'
+GREEN=$'\033[0;32m'
+YELLOW=$'\033[0;33m'
+CYAN=$'\033[0;36m'
+RED=$'\033[0;31m'
+RESET=$'\033[0m'
 
 # ---------------------------------------------------------------------------
 # Helper: printing
@@ -457,7 +457,7 @@ show_summary() {
     printf "    ./CLAUDE.md\n"
     printf "    ./CLAUDE.local.md\n"
     (( ${#CHOSEN_SKILL_NAMES[@]} > 0 )) && printf "    .claude/skills/*/\n"
-    (( ${#CHOSEN_SUBAGENT_NAMES[@]} > 0 )) && printf "    .claude/subagents/\n"
+    (( ${#CHOSEN_SUBAGENT_NAMES[@]} > 0 )) && printf "    .claude/agents/\n"
     printf "\n"
 
     while true; do
@@ -545,12 +545,12 @@ LOCALEOF
 
     # --- Subagents ---
     if (( ${#CHOSEN_SUBAGENT_NAMES[@]} > 0 )); then
-        mkdir -p .claude/subagents
+        mkdir -p .claude/agents
         local i
         for (( i=0; i<${#CHOSEN_SUBAGENT_NAMES[@]}; i++ )); do
             local sname="${CHOSEN_SUBAGENT_NAMES[$i]}"
             local spath="${CHOSEN_SUBAGENT_PATHS[$i]}"
-            local dest=".claude/subagents/${sname}.md"
+            local dest=".claude/agents/${sname}.md"
 
             if [ ! -f "$spath" ]; then
                 print_warning "Subagent not found on disk: $sname (skipped)"

@@ -42,7 +42,7 @@ The installer will:
 1. Let you select a project type (or pass it as an argument)
 2. Show a checkbox menu of all available skills, with template recommendations pre-selected
 3. Show a checkbox menu of all available subagents, with template recommendations pre-selected
-4. Confirm and install `CLAUDE.md`, `CLAUDE.local.md`, `.claude/skills/`, and `.claude/subagents/`
+4. Confirm and install `CLAUDE.md`, `CLAUDE.local.md`, `.claude/skills/`, and `.claude/agents/`
 
 ## Recommended Skill Combinations by Project Type
 
