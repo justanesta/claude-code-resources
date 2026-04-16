@@ -98,7 +98,7 @@ strip_frontmatter() {
     local file="$1" dashes=0
     while IFS= read -r line; do
         if [[ "$line" == "---" ]]; then
-            (( dashes++ ))
+            (( ++dashes ))
             if (( dashes == 2 )); then
                 # Consume the rest
                 while IFS= read -r line; do
@@ -294,7 +294,7 @@ checkbox_menu() {
     while true; do
         printf '\033[2J\033[H'
         print_header "$title"
-        printf "  ${DIM}Type a number to toggle, ${BOLD}a${RESET}${DIM}=all, ${BOLD}n${RESET}${DIM}=none, ${BOLD}d${RESET}${DIM}=done${RESET}\n\n"
+        printf "  ${DIM}Toggle: number, comma-list (${BOLD}1,3,5${RESET}${DIM}), or range (${BOLD}2-7${RESET}${DIM})  ${BOLD}a${RESET}${DIM}=all ${BOLD}n${RESET}${DIM}=none ${BOLD}d${RESET}${DIM}=done${RESET}\n\n"
 
         local prev_cat=""
         for (( i=0; i<total; i++ )); do
@@ -335,14 +335,33 @@ checkbox_menu() {
                 done
                 ;;
             *)
-                if [[ "$input" =~ ^[0-9]+$ ]] && (( input >= 1 && input <= total )); then
-                    local idx=$((input-1))
-                    if (( checked[idx] )); then
-                        checked[$idx]=0
-                    else
-                        checked[$idx]=1
+                # Split on commas, then handle each token as a number or range
+                IFS=',' read -ra tokens <<< "$input"
+                local tok
+                for tok in "${tokens[@]}"; do
+                    tok="${tok// /}"  # strip whitespace
+                    if [[ "$tok" =~ ^([0-9]+)-([0-9]+)$ ]]; then
+                        local rstart="${BASH_REMATCH[1]}" rend="${BASH_REMATCH[2]}"
+                        local r
+                        for (( r=rstart; r<=rend; r++ )); do
+                            if (( r >= 1 && r <= total )); then
+                                local idx=$((r-1))
+                                if (( checked[idx] )); then
+                                    checked[$idx]=0
+                                else
+                                    checked[$idx]=1
+                                fi
+                            fi
+                        done
+                    elif [[ "$tok" =~ ^[0-9]+$ ]] && (( tok >= 1 && tok <= total )); then
+                        local idx=$((tok-1))
+                        if (( checked[idx] )); then
+                            checked[$idx]=0
+                        else
+                            checked[$idx]=1
+                        fi
                     fi
-                fi
+                done
                 ;;
         esac
     done

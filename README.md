@@ -44,6 +44,13 @@ The installer will:
 3. Show a checkbox menu of all available subagents, with template recommendations pre-selected
 4. Confirm and install `CLAUDE.md`, `CLAUDE.local.md`, `.claude/skills/`, and `.claude/agents/`
 
+**Checkbox menu controls:**
+- Type a single number to toggle one item (e.g. `5`)
+- Comma-separated numbers to toggle several (e.g. `1,3,5`)
+- Ranges to toggle a span (e.g. `2-7`)
+- Combine them (e.g. `1,4-6,9`)
+- `a` = select all, `n` = deselect all, `d` = done
+
 ## Recommended Skill Combinations by Project Type
 
 ### Python Projects
